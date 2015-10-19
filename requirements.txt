@@ -7,7 +7,9 @@ django-modelcluster==1.0
 django-taggit==0.17.1
 django-treebeard==3.0
 djangorestframework==3.2.4
+gunicorn==19.3.0
 html5lib==0.999
+newrelic==2.56.0.42
 Pillow==3.0.0
 psycopg2==2.6.1
 pytz==2015.6
