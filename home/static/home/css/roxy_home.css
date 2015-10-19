@@ -11,9 +11,9 @@ body {
   color: white;
   opacity: 0.7;
   position: fixed;
-  top: 45%;
+  top: 55%;
   height: auto;
-  max-height: 45%;
+  max-height: 40%;
   left: 0;
   right: 0;
   display: -webkit-flex;
