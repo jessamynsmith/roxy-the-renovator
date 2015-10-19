@@ -5,12 +5,24 @@
 {% block extra_css %}
   <link rel="stylesheet" href="{% static 'vendor/supersized/css/supersized.css' %}" type="text/css"
         media="screen">
+  <link rel="stylesheet" href="{% static 'home/css/roxy_home.css' %}" type="text/css"
+        media="screen">
 {% endblock %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-  {#{{ self.body|richtext }}#}
+  <div class="flex-container info-bar">
+    <div class="panel left-panel">
+      {{ self.left_panel|richtext }}
+    </div>
+    <div class="panel middle-panel">
+      {{ self.middle_panel|richtext }}
+    </div>
+    <div class="panel right-panel">
+      {{ self.right_panel|richtext }}
+    </div>
+  </div>
 {% endblock %}
 
 {% block extra_js %}

@@ -8,10 +8,14 @@ from photologue.models import Gallery
 
 
 class HomePage(Page):
-    body = RichTextField(blank=True)
+    left_panel = RichTextField(blank=True)
+    middle_panel = RichTextField(blank=True)
+    right_panel = RichTextField(blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full")
+        FieldPanel('left_panel', classname="full"),
+        FieldPanel('middle_panel', classname="full"),
+        FieldPanel('right_panel', classname="full")
     ]
 
     def get_context(self, request):

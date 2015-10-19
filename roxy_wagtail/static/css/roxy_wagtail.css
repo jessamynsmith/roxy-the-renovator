@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'Crimson';
+  src: url('font/crimson_text_roman.ttf');
+}
+
+body {
+  font-family: 'Crimson', 'Georgia', serif;
+  font-size: 120%;
+}
