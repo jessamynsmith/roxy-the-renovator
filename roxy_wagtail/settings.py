@@ -64,8 +64,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'storages',
+    'photologue',
+    'sortedm2m',
 
     'libs'
 ]
@@ -115,6 +118,8 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
+
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
