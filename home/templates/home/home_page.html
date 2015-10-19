@@ -1,9 +1,51 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load static wagtailcore_tags %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'vendor/supersized/css/supersized.css' %}" type="text/css"
+        media="screen">
+{% endblock %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    {{ self.body|richtext }}
+  {#{{ self.body|richtext }}#}
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% static 'vendor/supersized/js/jquery.easing.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% static 'vendor/supersized/js/supersized.3.2.7.min.js' %}"></script>
+
+  <script type="text/javascript">
+
+    jQuery(function($) {
+      $.supersized({
+
+        // Functionality
+        slide_interval: 3000,    // Length between transitions
+        transition: 1,
+        // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+        transition_speed: 700,    // Speed of transition
+
+        // Components
+        slide_links: 'blank',
+        // Individual links for each slide (Options: false, 'number', 'name', 'blank')
+        slides: [      // Slideshow Images
+          {% for photo in slide_show_photos %}
+            {
+              image: '{{ photo.image.url }}',
+              title: '{{ photo.caption }}',
+              url: "{% url 'photologue:pl-photo' slug=photo.slug %}"
+            }
+            {% if not forloop.last %},{% endif %}
+          {% endfor %}
+        ]
+      });
+    });
+
+  </script>
 {% endblock %}
