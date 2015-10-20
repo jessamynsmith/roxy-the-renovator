@@ -34,7 +34,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '06ku851z#uqpzx^@l_vsm=c7!o9*7&
 DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', False)))
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['roxy-wagtail.herokuapp.com']
+ALLOWED_HOSTS = ['roxy-the-renovator.herokuapp.com']
 
 
 # Application definition
@@ -89,7 +89,7 @@ MIDDLEWARE_CLASSES = (
     'wagtail.wagtailredirects.middleware.RedirectMiddleware',
 )
 
-ROOT_URLCONF = 'roxy_wagtail.urls'
+ROOT_URLCONF = 'roxy_the_renovator.urls'
 
 TEMPLATES = [
     {
@@ -111,7 +111,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'roxy_wagtail.wsgi.application'
+WSGI_APPLICATION = 'roxy_the_renovator.wsgi.application'
 
 
 # Database
@@ -184,7 +184,7 @@ if AWS_ACCESS_KEY_ID:
 
 # Wagtail settings
 
-WAGTAIL_SITE_NAME = "roxy_wagtail"
+WAGTAIL_SITE_NAME = "roxy_the_renovator"
 
 
 # If Heroku addons start using EMAIL_URL, switch to dj-email-url

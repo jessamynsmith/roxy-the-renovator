@@ -1,5 +1,5 @@
 """
-WSGI config for roxy_wagtail project.
+WSGI config for roxy_the_renovator project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 from django.core.wsgi import get_wsgi_application
 from whitenoise.django import DjangoWhiteNoise
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "roxy_wagtail.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "roxy_the_renovator.settings")
 
 application = DjangoWhiteNoise(get_wsgi_application())
