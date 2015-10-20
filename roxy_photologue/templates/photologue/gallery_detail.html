@@ -12,18 +12,21 @@
 
   <h4>{{ gallery.title }}</h4>
 
-  {% if gallery.description %}
-    <p>{{ gallery.description|safe }}</p>
-  {% endif %}
+  <div class="gallery-detail">
 
-  {% for photo in gallery.public %}
-    <a href="{{ photo.get_absolute_url }}">
-      <img src="{{ photo.get_thumbnail_url }}" class="gallery-detail" alt="{{ photo.title }}">
-    </a>
-  {% endfor %}
-  <div>
-    <a href="{% url 'photologue:gallery-list' %}"
-       class="btn btn-default">{% trans "Back to all galleries" %}</a>
+    {% if gallery.description %}
+      <p>{{ gallery.description|safe }}</p>
+    {% endif %}
+
+    {% for photo in gallery.public %}
+      <a href="{{ photo.get_absolute_url }}">
+        <img src="{{ photo.get_thumbnail_url }}" class="gallery-detail" alt="{{ photo.title }}">
+      </a>
+    {% endfor %}
+    <div>
+      <a href="{% url 'photologue:gallery-list' %}"
+         class="btn btn-default">{% trans "Back to all galleries" %}</a>
+    </div>
   </div>
 
 {% endblock %}
