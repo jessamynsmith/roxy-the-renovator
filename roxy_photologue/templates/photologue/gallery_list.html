@@ -9,20 +9,27 @@
 {% block title %}{% trans "Roxy's Galleries" %}{% endblock %}
 
 {% block content %}
-  <div class="gallery-list">
-    {% if object_list %}
-      {% for gallery in object_list %}
-        <div class="gallery-list-item">
-          <a class="thumbnail-link" href="{{ gallery.get_absolute_url }}">
-            <div class="thumbnail" style="background-image: url('{{ gallery.sample.0.get_thumbnail_url }}');">
-              <div>{{ gallery.title }}</div>
-            </div>
-          </a>
-        </div>
-      {% endfor %}
-    {% else %}
-      <div class="row col-lg-12">{% trans "No galleries were found" %}.</div>
-    {% endif %}
+  <div class="gallery-detail">
+
+    <p><a href="/">Home</a></p>
+
+    <div class="gallery-list">
+      {% if object_list %}
+        {% for gallery in object_list %}
+          <div class="gallery-list-item">
+            <a class="thumbnail-link" href="{{ gallery.get_absolute_url }}">
+              <div class="thumbnail"
+                   style="background-image: url('{{ gallery.sample.0.get_thumbnail_url }}');">
+                <div>{{ gallery.title }}</div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="row col-lg-12">{% trans "No galleries were found" %}.</div>
+      {% endif %}
+    </div>
+
   </div>
 
 {% endblock %}
