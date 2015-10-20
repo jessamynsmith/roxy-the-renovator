@@ -21,7 +21,7 @@
     </div>
     <div class="col-md-6">
       {% if object.public_galleries %}
-        <a href="{{ gallery.get_absolute_url }}">Back to Gallery {{ gallery.title }}</a>
+        <a href="{{ object.public_galleries.0.get_absolute_url }}">Back to gallery</a>
       {% endif %}
     </div>
   </div>
