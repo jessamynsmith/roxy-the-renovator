@@ -1,0 +1,29 @@
+{% extends "photologue/root.html" %}
+{% load photologue_tags i18n static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'photologue/css/roxy_gallery.css' %}"
+        type="text/css" media="screen">
+{% endblock %}
+
+{% block title %}{{ object.title }}{% endblock %}
+
+{% block content %}
+
+  <h4>{{ object.title }}</h4>
+
+  <div class="photo-detail">
+    <div>
+      {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
+      <a href="{{ object.image.url }}">
+        <img src="{{ object.get_display_url }}" alt="{{ object.title }}">
+      </a>
+    </div>
+    <div class="col-md-6">
+      {% if object.public_galleries %}
+        <a href="{{ gallery.get_absolute_url }}">Back to Gallery {{ gallery.title }}</a>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}
