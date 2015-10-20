@@ -18,7 +18,15 @@ class HomePage(Page):
         FieldPanel('right_panel', classname="full")
     ]
 
-    def get_context(self, request):
-        context = super(HomePage, self).get_context(request)
+    def get_context(self, request, *args, **kwargs):
+        context = super(HomePage, self).get_context(request, *args, **kwargs)
         context['slide_show_photos'] = Gallery.objects.get(slug='slide-show').photos.all()
+        galleries = Gallery.objects.exclude(slug='slide-show').order_by("?")[:4]
+        gallery_thumbnails = []
+        for gallery in galleries:
+            photo = gallery.photos.all().order_by("?")[0]
+            photo.gallery_link = gallery.get_absolute_url()
+            gallery_thumbnails.append(photo)
+        gallery_iterator = iter(gallery_thumbnails)
+        context['gallery_thumbnails'] = list(zip(gallery_iterator, gallery_iterator))
         return context

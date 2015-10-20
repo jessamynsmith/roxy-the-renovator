@@ -20,6 +20,19 @@
       {{ self.middle_panel|richtext }}
     </div>
     <div class="panel right-panel">
+      <table>
+        {% for row in gallery_thumbnails %}
+          <tr>
+            {% for thumbnail in row %}
+              <td>
+                <a href="{{ thumbnail.gallery_link }}">
+                  <img class="full-width" src="{{ thumbnail.image.url }}">
+                </a>
+              </td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </table>
       {{ self.right_panel|richtext }}
     </div>
   </div>
