@@ -1,0 +1,26 @@
+.gallery-list {
+  width: 100%;
+  margin: auto;
+}
+
+.gallery-list > div {
+  float: left;
+}
+
+.gallery-list-item {
+  padding: 1%;
+  width: 23%;
+  height: 200px;
+}
+
+@media only screen and (min-width: 361px) and (max-width: 768px) {
+  .gallery-list-item {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .gallery-list-item {
+    width: 100%;
+  }
+}

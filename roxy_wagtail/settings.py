@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import dj_database_url
 from email.utils import formataddr
 import os
+from photologue import PHOTOLOGUE_APP_DIR
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -70,7 +71,8 @@ INSTALLED_APPS = [
     'photologue',
     'sortedm2m',
 
-    'libs'
+    'libs',
+    'roxy_photologue'
 ]
 
 MIDDLEWARE_CLASSES = (
@@ -94,6 +96,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(PROJECT_DIR, 'templates'),
+            os.path.join(PROJECT_DIR, os.pardir, 'roxy_photologue', 'templates'),
+            PHOTOLOGUE_APP_DIR,
         ],
         'APP_DIRS': True,
         'OPTIONS': {
