@@ -26,7 +26,8 @@
             {% for thumbnail in row %}
               <td>
                 <a href="{{ thumbnail.gallery_link }}">
-                  <img class="full-width" src="{{ thumbnail.image.url }}">
+                  <div class="home-thumbnail" style="background-image: url('{{ thumbnail.image.url }}');">
+                  </div>
                 </a>
               </td>
             {% endfor %}
