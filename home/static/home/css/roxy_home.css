@@ -54,10 +54,6 @@ body {
   flex-direction: row;
 }
 
-.right-panel h4 {
-  text-align: center;
-}
-
 .panel {
   width: 33%;
 }
