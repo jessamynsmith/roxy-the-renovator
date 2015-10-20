@@ -21,7 +21,8 @@ class HomePage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super(HomePage, self).get_context(request, *args, **kwargs)
         context['slide_show_photos'] = Gallery.objects.get(slug='slide-show').photos.all()
-        galleries = Gallery.objects.exclude(slug='slide-show').order_by("?")[:4]
+        galleries = Gallery.objects.exclude(slug='slide-show').filter(
+            photos__isnull=False).order_by("?")[:4]
         gallery_thumbnails = []
         for gallery in galleries:
             photo = gallery.photos.all().order_by("?")[0]
