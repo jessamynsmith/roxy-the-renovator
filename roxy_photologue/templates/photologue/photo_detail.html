@@ -19,7 +19,7 @@
         <img src="{{ object.get_display_url }}" alt="{{ object.title }}">
       </a>
     </div>
-    <div class="col-md-6">
+    <div>
       {% if object.public_galleries %}
         <a href="{{ object.public_galleries.0.get_absolute_url }}">Back to gallery</a>
       {% endif %}
