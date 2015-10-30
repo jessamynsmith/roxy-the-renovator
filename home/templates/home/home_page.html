@@ -24,7 +24,7 @@
             {% for row in gallery_thumbnails %}
                 <div class="thumbnails">
                     {% for thumbnail in row %}
-                        <div style="background-image: url('{{ thumbnail.image.url }}');" onclick="location.href='{{ thumbnail.gallery_link }}';">
+                        <div style='background-image: url("{{ thumbnail.image.url }}");' onclick="location.href='{{ thumbnail.gallery_link }}';">
                         </div>
                     {% endfor %}
                 </div>
