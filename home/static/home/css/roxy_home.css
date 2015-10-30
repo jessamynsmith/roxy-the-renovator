@@ -40,18 +40,13 @@ body {
   flex: 1 1 auto;
 }
 
-.thumbnails a {
-  display: block;
-  height: 100%;
-  border: 1px lightblue;
-}
-
 .thumbnails > div {
   width: 50%;
   background-position: top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  cursor: pointer;
 }
 
 .thumbnail-text {
