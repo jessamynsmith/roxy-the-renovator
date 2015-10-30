@@ -70,8 +70,10 @@ body {
 
 @media only screen and (max-width: 768px) {
   .flex-container {
+    top: 7%;
     -webkit-flex-direction: column;
     flex-direction: column;
+    overflow-y: auto;
   }
 
   .panel {
