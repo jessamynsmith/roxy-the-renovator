@@ -107,6 +107,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug': DEBUG,
         },
     },
 ]
@@ -165,9 +166,6 @@ COMPRESS_CSS_FILTERS = [
 COMPRESS_CSS_HASHING_METHOD = 'content'
 
 
-MEDIA_ROOT = os.path.join(HOME_DIR, 'roxytherenovator', 'media')
-MEDIA_URL = '/media/'
-
 AWS_STORAGE_BUCKET_NAME = 'roxytherenovator'
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
@@ -180,7 +178,9 @@ if AWS_ACCESS_KEY_ID:
 
     DEFAULT_FILE_STORAGE = 'libs.custom_storages.MediaStorage'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-
+else:
+    MEDIA_ROOT = os.path.join(HOME_DIR, 'roxytherenovator', 'media')
+    MEDIA_URL = '/media/'
 
 # Wagtail settings
 
