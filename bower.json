@@ -1,0 +1,22 @@
+{
+  "name": "roxy-the-renovator",
+  "authors": [
+    "Jessamyn Smith <jessamyn.smith@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "homepage": "https://roxy-the-renovator.herokuapp.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "supersized": "*"
+  }
+}

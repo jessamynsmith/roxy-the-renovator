@@ -17,6 +17,7 @@ from photologue import PHOTOLOGUE_APP_DIR
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(PROJECT_DIR)
 HOME_DIR = os.path.expanduser("~")
 
 
@@ -29,7 +30,8 @@ ADMINS = (
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '06ku851z#uqpzx^@l_vsm=c7!o9*7&i&0556l9_edpm_!d^eia')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',
+                            '06ku851z#uqpzx^@l_vsm=c7!o9*7&i&0556l9_edpm_!d^eia')
 
 DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', False)))
 
@@ -151,6 +153,7 @@ STATICFILES_FINDERS = (
 
 STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'static'),
+    os.path.join(BASE_DIR, 'bower_components'),
 )
 
 STATIC_ROOT = os.path.join(HOME_DIR, 'roxytherenovator', 'static')
