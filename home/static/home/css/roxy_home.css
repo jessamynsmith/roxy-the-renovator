@@ -53,31 +53,30 @@ body {
   padding-top: 14px;
 }
 
-.flex-container {
-  -webkit-flex-direction: row;
-  flex-direction: row;
+@media only screen and (min-width: 768px) {
+
+  .flex-container {
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .panel {
+    width: 33%;
+    top: 0;
+    bottom: 0;
+  }
+
+  .left-panel, .middle-panel {
+    border-right: 1px #aaaaaa dashed;
+  }
 }
 
-.panel {
-  width: 33%;
-  top: 0;
-  bottom: 0;
-}
-
-.left-panel, .middle-panel {
-  border-right: 1px #aaaaaa dashed;
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .flex-container {
     top: 7%;
     -webkit-flex-direction: column;
     flex-direction: column;
     overflow-y: auto;
-  }
-
-  .panel {
-    width: 100%;
   }
 
   .left-panel, .middle-panel {
