@@ -3,75 +3,71 @@
 {% load static wagtailcore_tags %}
 
 {% block extra_css %}
-  <link rel="stylesheet" href="{% static 'vendor/supersized/css/supersized.css' %}" type="text/css"
-        media="screen">
-  <link rel="stylesheet" href="{% static 'home/css/roxy_home.css' %}" type="text/css"
-        media="screen">
+    <link rel="stylesheet" href="{% static 'vendor/supersized/css/supersized.css' %}"
+          type="text/css"
+          media="screen">
+    <link rel="stylesheet" href="{% static 'home/css/roxy_home.css' %}" type="text/css"
+          media="screen">
 {% endblock %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-  <div class="flex-container info-bar">
-    <div class="panel left-panel">
-      {{ self.left_panel|richtext }}
-    </div>
-    <div class="panel middle-panel">
-      {{ self.middle_panel|richtext }}
-    </div>
-    <div class="panel right-panel">
-      <table>
-        {% for row in gallery_thumbnails %}
-          <tr>
-            {% for thumbnail in row %}
-              <td>
-                <a class="thumbnail-link" href="{{ thumbnail.gallery_link }}">
-                  <div class="thumbnail" style="background-image: url('{{ thumbnail.image.url }}');">
-                  </div>
-                </a>
-              </td>
+    <div class="flex-container info-bar">
+        <div class="panel left-panel">
+            {{ self.left_panel|richtext }}
+        </div>
+        <div class="panel middle-panel">
+            {{ self.middle_panel|richtext }}
+        </div>
+        <div class="panel right-panel">
+            {% for row in gallery_thumbnails %}
+                <div class="thumbnails">
+                    {% for thumbnail in row %}
+                        <div style="background-image: url('{{ thumbnail.image.url }}');"></div>
+                    {% endfor %}
+                </div>
             {% endfor %}
-          </tr>
-        {% endfor %}
-      </table>
-      {{ self.right_panel|richtext }}
+            <div class="thumbnail-text">
+                {{ self.right_panel|richtext }}
+            </div>
+        </div>
     </div>
-  </div>
 {% endblock %}
 
 {% block extra_js %}
-  <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script type="text/javascript"
-          src="{% static 'vendor/supersized/js/jquery.easing.min.js' %}"></script>
-  <script type="text/javascript"
-          src="{% static 'vendor/supersized/js/supersized.3.2.7.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'vendor/supersized/js/jquery.easing.min.js' %}"></script>
+    <script type="text/javascript"
+            src="{% static 'vendor/supersized/js/supersized.3.2.7.min.js' %}"></script>
 
-  <script type="text/javascript">
+    <script type="text/javascript">
 
-    jQuery(function($) {
-      $.supersized({
+        jQuery(function($) {
+            $.supersized({
 
-        // Functionality
-        slide_interval: 5000,    // Length between transitions
-        transition: 1,
-        // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-        transition_speed: 2000,    // Speed of transition
+                // Functionality
+                slide_interval: 5000,    // Length between transitions
+                transition: 1,
+                // 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+                transition_speed: 2000,    // Speed of transition
 
-        // Components
-        slide_links: 'blank',
-        // Individual links for each slide (Options: false, 'number', 'name', 'blank')
-        slides: [      // Slideshow Images
-          {% for photo in slide_show_photos %}
-            {
-              image: '{{ photo.image.url }}',
-              title: '{{ photo.caption }}',
-              url: "{% url 'photologue:pl-photo' slug=photo.slug %}"
-            }
-            {% if not forloop.last %},{% endif %}
-          {% endfor %}
-        ]
-      });
-    });
+                // Components
+                slide_links: 'blank',
+                // Individual links for each slide (Options: false, 'number', 'name', 'blank')
+                slides: [      // Slideshow Images
+                    {% for photo in slide_show_photos %}
+                        {
+                            image: '{{ photo.image.url }}',
+                            title: '{{ photo.caption }}',
+                            url: "{% url 'photologue:pl-photo' slug=photo.slug %}"
+                        }
+                        {% if not forloop.last %},{% endif %}
+                    {% endfor %}
+                ]
+            });
+        });
 
-  </script>
+    </script>
 {% endblock %}
