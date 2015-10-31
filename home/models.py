@@ -20,8 +20,9 @@ class HomePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super(HomePage, self).get_context(request, *args, **kwargs)
-        context['slide_show_photos'] = Gallery.objects.get(slug='slide-show').photos.all()
-        galleries = Gallery.objects.exclude(slug='slide-show').filter(
+        slide_show_slug = '200-slideshow-photos-website'
+        context['slide_show_photos'] = Gallery.objects.get(slug=slide_show_slug).photos.all()
+        galleries = Gallery.objects.exclude(slug=slide_show_slug).filter(
             photos__isnull=False).order_by("?")[:4]
         gallery_thumbnails = []
         for gallery in galleries:
