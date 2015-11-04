@@ -175,10 +175,13 @@ AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 
 # If AWS settings are available, use AWS for static and media
 if AWS_ACCESS_KEY_ID:
-    MEDIAFILES_LOCATION = 'media'
-
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+    STATICFILES_LOCATION = 'static'
+    STATICFILES_STORAGE = 'libs.custom_storages.StaticStorage'
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
+
+    MEDIAFILES_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'libs.custom_storages.MediaStorage'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 else:
