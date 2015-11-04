@@ -178,12 +178,14 @@ if AWS_ACCESS_KEY_ID:
     AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
     STATICFILES_LOCATION = 'static'
-    STATICFILES_STORAGE = 'libs.custom_storages.StaticStorage'
+    STATICFILES_STORAGE = 'libs.custom_storages.CachedS3BotoStorage'
     STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
 
     MEDIAFILES_LOCATION = 'media'
     DEFAULT_FILE_STORAGE = 'libs.custom_storages.MediaStorage'
     MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+    COMPRESS_STORAGE = STATICFILES_STORAGE
 else:
     MEDIA_ROOT = os.path.join(HOME_DIR, 'roxytherenovator', 'media')
     MEDIA_URL = '/media/'

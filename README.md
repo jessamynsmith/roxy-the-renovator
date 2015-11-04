@@ -76,5 +76,5 @@ Set the Heroku config vars:
 
 Add Heroku buildpacks:
 
-		1. https://github.com/heroku/heroku-buildpack-nodejs.git
-		2. https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/python.tgz
+    heroku buildpacks:set heroku/nodejs -i 1
+    heroku buildpacks:set heroku/python -i 2
