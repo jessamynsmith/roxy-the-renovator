@@ -1,5 +1,4 @@
 from django.conf.urls import include, url
-from django.conf import settings
 from django.contrib import admin
 
 from wagtail.wagtailadmin import urls as wagtailadmin_urls
