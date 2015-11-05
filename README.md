@@ -53,6 +53,16 @@ Lint JavaScript:
     jshint */static/*/js
     
     
+Continuous Integration
+----------------------
+    
+    This project is set up for CI using circle.
+    
+    Your build needs the following environment variables:
+    AWS_ACCESS_KEY_ID
+    AWS_SECRET_ACCESS_KEY
+    
+    
 Deployment
 ----------
 
