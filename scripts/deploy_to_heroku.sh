@@ -4,6 +4,7 @@
 set -e
 
 CIRCLE=$1
+export DJANGO_DEBUG=0
 
 DEPLOY_DATE=`date "+%FT%T%z"`
 SECRET=$(openssl rand -base64 58 | tr '\n' '_')
