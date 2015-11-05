@@ -205,4 +205,4 @@ EMAIL_USE_TLS = True
 
 if not EMAIL_HOST:
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-    EMAIL_FILE_PATH = '%s/Development/django_emails/eggtimer/emails' % HOME_DIR
+    EMAIL_FILE_PATH = '%s/Development/django_emails/roxy-the-renovator/emails' % HOME_DIR
