@@ -14,7 +14,7 @@ Create a virtualenv using Python 3 and install dependencies. I recommend getting
 to be the actual path to python3 on your system.
 
     mkvirtualenv roxy-the-renovator --python=/path/to/python3
-    pip install -r requirements/development.txt
+    pip install -r requirements.txt
     
 Ensure node is installed. This can be done via homebrew:
 
@@ -61,6 +61,7 @@ Continuous Integration
     Your build needs the following environment variables:
     AWS_ACCESS_KEY_ID
     AWS_SECRET_ACCESS_KEY
+    COVERALLS_REPO_TOKEN
     
     
 Deployment
