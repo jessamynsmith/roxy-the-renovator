@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY',
 DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', False)))
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-ALLOWED_HOSTS = ['roxy-the-renovator.herokuapp.com']
+ALLOWED_HOSTS = ['roxy-the-renovator.herokuapp.com', 'roxytherenovator.com']
 
 
 # Application definition
