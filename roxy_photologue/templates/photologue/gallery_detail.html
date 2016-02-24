@@ -22,7 +22,7 @@
 
     <ul id="light-slider">
       {% for photo in gallery.public %}
-        <li data-thumb="{{ photo.get_display_url }}">
+        <li data-thumb="{{ photo.get_thumbnail_url }}">
           <div class="gallery-image">
             <a class="thumbnail-link" href="{{ photo.get_absolute_url }}">
               <img src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
