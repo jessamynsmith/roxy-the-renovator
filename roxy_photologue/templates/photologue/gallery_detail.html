@@ -2,6 +2,8 @@
 {% load i18n static %}
 
 {% block extra_css %}
+  <link rel="stylesheet" href="{% static 'lightslider/dist/css/lightslider.min.css' %}"
+        type="text/css" media="screen">
   <link rel="stylesheet" href="{% static 'photologue/css/roxy_gallery.css' %}"
         type="text/css" media="screen">
 {% endblock %}
@@ -10,22 +12,38 @@
 
 {% block content %}
 
-  <h4>{{ gallery.title }}</h4>
+  <div class="gallery gallery-detail">
 
-  <div class="gallery-detail">
-    {% if gallery.description %}
-      <p>{{ gallery.description|safe }}</p>
-    {% endif %}
+    <h2>{{ gallery.title }}</h2>
+    {#  TODO re-enable once descriptions are entered#}
+    {#    {% if gallery.description %}#}
+    {#      <p>{{ gallery.description|safe }}</p>#}
+    {#    {% endif %}#}
 
-    {% for photo in gallery.public %}
-      <a href="{{ photo.get_absolute_url }}">
-        <img src="{{ photo.get_thumbnail_url }}" class="gallery-detail" alt="{{ photo.title }}">
-      </a>
-    {% endfor %}
+    <ul id="light-slider">
+      {% for photo in gallery.public %}
+        <li data-thumb="{{ photo.get_display_url }}">
+          <div class="gallery-image">
+            <a class="thumbnail-link" href="{{ photo.get_absolute_url }}">
+              <img src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
+            </a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <br>
     <div>
       <a href="{% url 'photologue:gallery-list' %}"
          class="btn btn-default">{% trans "Back to all galleries" %}</a>
     </div>
   </div>
 
+{% endblock %}
+
+{% block extra_js %}
+  <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+  <script type="text/javascript"
+          src="{% static 'lightslider/dist/js/lightslider.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'photologue/js/gallery_detail.js' %}"></script>
 {% endblock %}

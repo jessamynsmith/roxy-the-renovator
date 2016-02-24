@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "supersized": "*"
+    "supersized": "*",
+    "lightslider": "^1.1.5"
   }
 }

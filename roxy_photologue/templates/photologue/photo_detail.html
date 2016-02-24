@@ -10,11 +10,13 @@
 
 {% block content %}
 
-  <h4>{{ object.title }}</h4>
+  <div class="gallery">
 
-  <div class="gallery-detail">
+  <h2>{{ object.title }}</h2>
+
     <div>
-      {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}
+    {#  TODO re-enable once descriptions are entered#}
+{#      {% if object.caption %}<p>{{ object.caption|safe }}</p>{% endif %}#}
       <a href="{{ object.image.url }}">
         <img src="{{ object.get_display_url }}" alt="{{ object.title }}">
       </a>
