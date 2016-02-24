@@ -21,6 +21,11 @@
   text-decoration: none;
 }
 
+.gallery-detail {
+  width: 600px;
+  margin: auto;
+}
+
 @media only screen and (min-width: 361px) and (max-width: 768px) {
   .gallery-list-item {
     width: 50%;
@@ -31,11 +36,10 @@
   .gallery-list-item {
     width: 100%;
   }
-}
 
-.gallery-detail {
-  width: 600px;
-  margin: auto;
+  .gallery-detail {
+    width: 100%;
+  }
 }
 
 .gallery-detail ul {
