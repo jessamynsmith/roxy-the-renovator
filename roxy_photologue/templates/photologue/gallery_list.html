@@ -11,7 +11,7 @@
 {% block content %}
   <div class="gallery-detail">
 
-    <p><a href="/">Home</a></p>
+    <h2>{% trans "Roxy's Galleries" %}</h2>
 
     <div class="gallery-list">
       {% if object_list %}
@@ -19,7 +19,7 @@
           <div class="gallery-list-item">
             <a class="thumbnail-link" href="{{ gallery.get_absolute_url }}">
               <div class="thumbnail"
-                   style="background-image: url('{{ gallery.sample.0.get_thumbnail_url }}');">
+                   style="background-image: url('{{ gallery.sample.0.get_display_url }}')">
                 <div>{{ gallery.title }}</div>
               </div>
             </a>
@@ -29,6 +29,8 @@
         <div>{% trans "No galleries were found" %}.</div>
       {% endif %}
     </div>
+
+    <p><a href="/">Home</a></p>
 
   </div>
 
