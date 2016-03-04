@@ -83,7 +83,7 @@ Set the Heroku config vars:
     AWS_ACCESS_KEY_ID
     AWS_SECRET_ACCESS_KEY
     DJANGO_SECRET_KEY
-		DJANGO_SETTINGS_MODULE
+    DJANGO_SETTINGS_MODULE
 
 Add Heroku buildpacks:
 
