@@ -4,7 +4,6 @@
 set -e
 
 CIRCLE=$1
-export DJANGO_DEBUG=0
 
 DEPLOY_DATE=`date "+%FT%T%z"`
 SECRET=$(openssl rand -base64 58 | tr '\n' '_')
@@ -23,10 +22,9 @@ python manage.py compress
 
 if [ $CIRCLE ]
 then
-    git fetch origin --unshallow
-    git push git@heroku.com:roxy-the-renovator.git $CIRCLE_SHA1:refs/heads/master
+    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/roxy-the-renovator.git master
 else
     git push heroku master
 fi
 
-heroku run python manage.py migrate --noinput --app=roxy-the-renovator
+heroku run python manage.py migrate --noinput --app roxy-the-renovator
