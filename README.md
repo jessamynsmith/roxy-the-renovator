@@ -24,7 +24,10 @@ Install javascript dependencies:
 
     npm install
 
-Set environment variables as needed (check settings.py for values).
+Set environment variables as needed (check settings.py for values), e.g.
+
+    export DATABASE_URL=postgres://username:password@127.0.0.1:5432/roxy-the-renovator
+    export DJANGO_DEBUG=1
 
 Set up db:
 

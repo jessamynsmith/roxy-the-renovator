@@ -1,0 +1,7 @@
+[run]
+source = home, libs, roxy_photologue, roxy_the_renovator, search
+branch = True
+omit = *tests*
+    */migrations/*
+plugins =
+    django_coverage_plugin
