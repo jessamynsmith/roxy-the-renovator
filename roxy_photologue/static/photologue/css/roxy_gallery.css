@@ -33,7 +33,7 @@
   height: 250px;
 }
 
-.gallery-list-item .thumbnail-link {
+.gallery-list-item .thumbnail-link, .gallery-archive-list-item .thumbnail-link {
   text-decoration: none;
 }
 
