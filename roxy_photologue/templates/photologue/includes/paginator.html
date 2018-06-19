@@ -1,8 +1,10 @@
 {% load i18n %}
 {% if is_paginated %}
     {% if page_obj.has_previous %}
+        <span class="paginate"><a href="?page=1">{% trans "First" %}</a></span>
         <span class="paginate"><a href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a></span>
     {% else %}
+        <span class="paginate disabled">{% trans "First" %}</span>
         <span class="paginate disabled">{% trans "Previous" %}</span>
     {% endif %}
     <span class="paginate number-of-pages">
@@ -12,7 +14,9 @@
     </span>
     {% if page_obj.has_next %}
         <span class="paginate"><a href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a></span>
+        <span class="paginate"><a href="?page={{ page_obj.paginator.num_pages }}">{% trans "Last" %}</a></span>
     {% else %}
         <span class="paginate disabled">{% trans "Next" %}</span>
+        <span class="paginate disabled">{% trans "Last" %}</span>
     {% endif %}
 {% endif %}

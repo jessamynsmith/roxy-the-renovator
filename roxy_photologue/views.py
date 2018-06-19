@@ -4,7 +4,7 @@ from photologue.models import Gallery
 
 
 class GalleryArchiveListView(ListView):
-    paginate_by = 20
+    paginate_by = 12
     template_name = 'photologue/gallery_archive_list.html'
 
     def get_queryset(self):
@@ -16,4 +16,4 @@ class GalleryArchiveListView(ListView):
 
 class GalleryListView(ListView):
     queryset = Gallery.objects.on_site().is_public().order_by('-pk')
-    paginate_by = 20
+    paginate_by = 12
