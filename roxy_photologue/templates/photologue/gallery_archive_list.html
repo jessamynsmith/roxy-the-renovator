@@ -15,10 +15,13 @@
 
     {% include 'photologue/gallery_list_snippet.html' with item_class='gallery-archive-list-item' %}
 
-    {% include "photologue/includes/paginator.html" %}
-
-    <p><a href="{% url 'photologue:gallery-list' %}">Main Gallery</a></p>
-    <p><a href="/">Home</a></p>
+    <p class="gallery-list">
+        {% include "photologue/includes/paginator.html" %}
+        <br>
+        <a href="{% url 'photologue:gallery-list' %}">Main Gallery</a>
+        <br>
+        <a href="/">Home</a>
+    </p>
 
   </div>
 

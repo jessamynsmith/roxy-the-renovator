@@ -12,6 +12,7 @@
 }
 
 .gallery-list {
+  clear: both;
   width: 100%;
   margin: auto;
 }
