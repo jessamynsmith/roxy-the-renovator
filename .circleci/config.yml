@@ -65,8 +65,34 @@ jobs:
       - image: circleci/python:3.6.5-jessie-node
     steps:
       - checkout
+      - restore_cache:
+          key: deps-py-{{ .Branch }}-{{ checksum "requirements.txt" }}
+      - restore_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+      - restore_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
       - run:
-          name: Deploy Master to Heroku
+          # https://discuss.circleci.com/t/circleci-python-docker-images-disallow-pip-install-due-to-directory-ownership/12504
+          name: Install Python deps in a venv
           command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      - save_cache:
+          key: deps-py-{{ .Branch }}-{{ checksum "requirements.txt" }}
+          paths:
+            - "venv"
+      - save_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+      - save_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
+          paths:
+            - "bower_components"
+      - run:
+          command: |
+            npm install
+            . venv/bin/activate
             wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | bash
             bash scripts/deploy_to_heroku.sh circle
