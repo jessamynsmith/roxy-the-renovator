@@ -206,3 +206,6 @@ EMAIL_USE_TLS = True
 if not EMAIL_HOST:
     EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
     EMAIL_FILE_PATH = '%s/Development/django_emails/roxy-the-renovator/emails' % HOME_DIR
+
+
+SLIDE_SHOW_SLUG = '200-slideshow-photos-website'

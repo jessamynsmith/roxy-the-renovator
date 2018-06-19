@@ -3,7 +3,7 @@
     <div class="gallery-list">
       {% if object_list %}
         {% for gallery in object_list %}
-          <div class="gallery-list-item">
+          <div class="{{ item_class }}">
             <a class="thumbnail-link" href="{{ gallery.get_absolute_url }}">
               <div class="thumbnail"
                    style="background-image: url('{{ gallery.sample.0.get_display_url }}')">

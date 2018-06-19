@@ -13,7 +13,7 @@
 
     <h2>{% trans "Roxy's Galleries" %}</h2>
 
-    {% include 'photologue/gallery_list_snippet.html' %}
+    {% include 'photologue/gallery_list_snippet.html' with item_class='gallery-list-item' %}
 
     <p><a href="{% url 'photologue:gallery-archive-list' %}">Gallery Archive</a></p>
     <p><a href="/">Home</a></p>

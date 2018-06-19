@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from django.conf import settings
+
 from wagtail.wagtailcore.models import Page
 from wagtail.wagtailcore.fields import RichTextField
 from wagtail.wagtailadmin.edit_handlers import FieldPanel
@@ -20,10 +22,10 @@ class HomePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super(HomePage, self).get_context(request, *args, **kwargs)
-        slide_show_slug = '200-slideshow-photos-website'
-        context['slide_show_photos'] = Gallery.objects.get(slug=slide_show_slug).photos.all()
-        galleries = Gallery.objects.exclude(slug=slide_show_slug).filter(
-            photos__isnull=False).order_by("?")[:4]
+        photos = Gallery.objects.get(slug=settings.SLIDE_SHOW_SLUG).photos.all()
+        context['slide_show_photos'] = photos
+        galleries = Gallery.objects.exclude(slug=settings.SLIDE_SHOW_SLUG)
+        galleries = galleries.filter(photos__isnull=False).order_by("?")[:4]
         gallery_thumbnails = []
         for gallery in galleries:
             photo = gallery.photos.all().order_by("?")[0]
