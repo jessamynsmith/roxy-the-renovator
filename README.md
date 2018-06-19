@@ -42,6 +42,10 @@ Run tests and view coverage:
 Check code style:
 
     flake8 .
+
+Lint JavaScript:
+
+    jshint */static/*/js
     
 Generate graph of data models, e.g.:
 
@@ -51,10 +55,14 @@ Run server:
 
     python manage.py runserver
 
-Lint JavaScript:
+WagTail admin:
 
-    jshint */static/*/js
-    
+    http://127.0.0.1:8000/admin/
+
+Django admin:
+
+    http://127.0.0.1:8000/django-admin/
+
     
 Continuous Integration
 ----------------------

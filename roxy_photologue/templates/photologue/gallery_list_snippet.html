@@ -1,0 +1,18 @@
+{% load i18n %}
+
+    <div class="gallery-list">
+      {% if object_list %}
+        {% for gallery in object_list %}
+          <div class="gallery-list-item">
+            <a class="thumbnail-link" href="{{ gallery.get_absolute_url }}">
+              <div class="thumbnail"
+                   style="background-image: url('{{ gallery.sample.0.get_display_url }}')">
+                <div>{{ gallery.title }}</div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div>{% trans "No galleries were found" %}.</div>
+      {% endif %}
+    </div>

@@ -15,7 +15,9 @@
 
     {% include 'photologue/gallery_list_snippet.html' %}
 
-    <p><a href="{% url 'photologue:gallery-archive-list' %}">Gallery Archive</a></p>
+    {% include "photologue/includes/paginator.html" %}
+
+    <p><a href="{% url 'photologue:gallery-list' %}">Main Gallery</a></p>
     <p><a href="/">Home</a></p>
 
   </div>
