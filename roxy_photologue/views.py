@@ -15,5 +15,8 @@ class GalleryArchiveListView(ListView):
 
 
 class GalleryListView(ListView):
-    queryset = Gallery.objects.on_site().is_public().order_by('-pk')
     paginate_by = 12
+
+    def get_queryset(self):
+        queryset = Gallery.objects.on_site().is_public().order_by('date_added')
+        return queryset
