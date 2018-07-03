@@ -1,0 +1,34 @@
+Ramsay House: Sidewalks, Calgary, AB
+Ramsay House: Exterior Finishing, Calgary, AB
+Ramsay House: Kitchen, Calgary, AB
+Ramsay House: Bathrooms, Calgary, AB
+Ramsay House: Trim, Calgary, AB
+Ramsay House: Flooring and Tiles, Calgary, AB
+Ramsay House: Decks and Balconies, Calgary, AB
+Ramsay House: Fences, Calgary, AB
+Ramsay House: Interior Painting, Calgary AB
+Ramsay House: Mechanical, Calgary, AB
+Ramsay House: Insulation, Calgary, AB
+Ramsay House: Structural Repair, Calgary, AB
+Ramsay House: Additions, Calgary, AB
+Ramsay House: Moving and Lifting, Calgary, AB
+Ramsay House: Foundation, Calgary, AB
+Ramsay House: Initial Renovations, Calgary, AB
+Ramsay House: Original Condition, Calgary, AB
+
+
+01 Front-North
+02 Back-South/
+03 Left side-East/
+04 Right side-West/
+05 Barn/
+09 Entryway/
+10 Kitchen/
+11 Dining Room/
+12 Living Room/
+13 Main Floor
+14 Stairwell/
+16 North Bedroom/
+17 South Bedroom/
+18 Second Floor
+19 Basement/
