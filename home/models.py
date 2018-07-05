@@ -25,6 +25,7 @@ class HomePage(Page):
         photos = Gallery.objects.get(slug=settings.SLIDE_SHOW_SLUG).photos.all()
         context['slide_show_photos'] = photos
         galleries = Gallery.objects.exclude(slug=settings.SLIDE_SHOW_SLUG)
+        galleries = galleries.exclude(title__regex=settings.STARTS_WITH_NUMBER_REGEX)
         galleries = galleries.filter(photos__isnull=False).order_by("?")[:4]
         gallery_thumbnails = []
         for gallery in galleries:

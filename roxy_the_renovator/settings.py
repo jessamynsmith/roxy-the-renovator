@@ -209,3 +209,4 @@ if not EMAIL_HOST:
 
 
 SLIDE_SHOW_SLUG = '200-slideshow-photos-website'
+STARTS_WITH_NUMBER_REGEX = r'^\d.*'
