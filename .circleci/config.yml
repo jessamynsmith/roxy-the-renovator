@@ -14,7 +14,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.6.5-jessie-node
+      - image: circleci/python:3.6.8-jessie-node
         environment:
           DATABASE_URL: postgresql://root@localhost/circle_test?sslmode=disable
           DJANGO_SETTINGS_MODULE: roxy_the_renovator.settings
@@ -62,7 +62,7 @@ jobs:
             PYTHONPATH=. coveralls
   deploy:
     docker:
-      - image: circleci/python:3.6.5-jessie-node
+      - image: circleci/python:3.6.8-jessie-node
     steps:
       - checkout
       - restore_cache:
