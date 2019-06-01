@@ -34,7 +34,7 @@
 
     <br>
     <div>
-      <a id="back_link" href=""
+      <a id="back_link" href="{% url 'photologue:gallery-list' %}"
          class="btn btn-default">{% trans "Back to all galleries" %}</a>
     </div>
   </div>
@@ -47,8 +47,9 @@
           src="{% static 'lightslider/dist/js/lightslider.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'photologue/js/gallery_detail.js' %}"></script>
     <script>
-    $(document).ready(function() {
-      $('#back_link').attr('href', document.referrer);
-    });
+    // This doesn't work consistently, so better to just send people back to the main gallery
+    //$(document).ready(function() {
+    //  $('#back_link').attr('href', document.referrer);
+    //});
     </script>
 {% endblock %}
