@@ -5,7 +5,7 @@ chardet==3.0.4
 coverage==4.5.3
 coveralls==1.7.0
 dj-database-url==0.3.0
-Django==1.8.19
+Django==1.11.29
 django-appconf==1.0.1
 django-compressor==1.5
 django-coverage-plugin==1.5.0
