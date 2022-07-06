@@ -19,7 +19,7 @@ djangorestframework==3.2.5
 docopt==0.6.2
 flake8==3.5.0
 gunicorn==19.3.0
-html5lib==0.999
+html5lib==0.999999999
 idna==2.8
 mccabe==0.6.1
 newrelic==2.56.0.42
